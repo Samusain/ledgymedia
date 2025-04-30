@@ -1,38 +1,175 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
+
+/* App.css */
+.app {
+  font-family: "Big Shoulders", sans-serif;
+  color: #fff;
+  background-color: #000;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+:root {
+  --primary: #8b5cf6;
+  --secondary: #6366f1;
+  --accent: #f472b6;
+  --text: #fff;
+  --bg: #000;
+  --bg2: #131313;
+  --muted: #a1a1aa;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.cta-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 800;
+  margin: 0;
+}
+
+p {
+  line-height: 1.6;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ===== GLOBAL STYLES ===== */
+/* ===== SHARED COMPONENT STYLES ===== */
+.section-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+}
+
+/* ===== SERVICES ===== */
+.services {
+  padding: 5rem 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  perspective: 1000px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.service-card {
+  transform: rotateY(15deg);
+  opacity: 0.9;
+  /* animation: floatIn 0.6s ease-out forwards; */
+}
+
+/* ===== RESULTS ===== */
+.results {
+  padding: 5rem 2rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+/* ===== PROCESS ===== */
+.process {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  perspective: 1000px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 5rem 2rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes floatIn {
+  from { transform: translateY(50px) rotateY(15deg); opacity: 0; }
+  to { transform: translateY(0) rotateY(15deg); opacity: 0.9; }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2.5rem;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .client-logos {
+    flex-wrap: wrap;
+    gap: 20px;
   }
 }

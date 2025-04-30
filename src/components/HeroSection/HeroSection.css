@@ -1,0 +1,144 @@
+/* HeroSection.css */
+.hero {
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../images/thecamera.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 80px 80px;
+  }
+  
+  .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #f9f9f9;
+  }
+  
+  .hero-content h2 {
+    font-size: 5rem;
+    line-height: 1.1;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .hero-btn {
+    position: relative;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 1;
+  }
+
+  .hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    transition: 0.6s;
+    z-index: -1;
+  }
+
+  .hero-btn:hover::before {
+    left: 100%;
+  }
+
+  .hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+    0 0 10px #fff;
+  }
+
+  .hero-btn:active {
+    transform: scale(0.98);
+  }
+
+  .hero-btn::after {
+    content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  z-index: -2;
+  }
+
+  .hero-btn:hover::after {
+    animation: borderPulse 2s infinite;
+  }
+
+  @keyframes borderPulse {
+    0% {
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+    }
+    50% {
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+    }
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin: 40px 0;
+  }
+  
+  .services-grid span {
+    font-weight: 700;
+    padding: 10px;
+    border: 2px solid #fff;
+    text-align: center;
+  }
+  
+  .client-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+  }
+  
+  .client-logos img {
+    height: 30px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  
+  .client-logos img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
