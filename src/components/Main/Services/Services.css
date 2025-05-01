@@ -141,3 +141,53 @@
     color: #a1a1aa;
     font-size: 0.9rem;
   }
+
+  @media (max-width: 36rem){
+    .services {
+      background-color: #000;
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    
+    .services h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+    
+    .services-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 0 0.5rem;
+    }
+    
+    .paid-ads {
+      grid-column: auto;
+      margin: 0 0.5rem;
+    }
+    
+    .ads-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-section {
+      padding: 1.5rem;
+      margin: 2rem 0.5rem 0;
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }

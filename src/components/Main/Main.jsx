@@ -1,10 +1,10 @@
-// import Slider from './Slider/Slider.jsx';
 // import './Main.css'
-import HeroSection from '../HeroSection/HeroSection';
-import Services from '../Services/Services';
-import Results from '../Results/Results';
-import Process from '../Process/Process';
-
+import Slider from './Slider/Slider.jsx';
+import HeroSection from './HeroSection/HeroSection';
+import Services from './Services/Services';
+import Results from './Results/Results';
+import Process from './Process/Process';
+import About from './About/AboutScroll.jsx';
 
 const Main = () => {
     return ( 
@@ -12,7 +12,9 @@ const Main = () => {
             <HeroSection />
             <Services />
             <Process />
+            <Slider />
             <Results />
+            <About />
         </div>
      );
 }

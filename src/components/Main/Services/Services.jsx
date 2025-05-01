@@ -15,7 +15,6 @@ const Services = () => {
         
         <div className="service-card">
           <h3>Digital Marketing</h3>
-          <h4>Social Media Marketing</h4>
           <ul>
             <li>Content Creation</li>
             <li>Influencer Marketing</li>

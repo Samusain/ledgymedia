@@ -1,46 +1,80 @@
 .footer {
-    background-color: #000;
-    color: #fff;
-    padding: 5rem 2rem 2rem;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .scroll-message {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #a1a1aa;
-    font-style: italic;
-  }
-  
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 3rem 1rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footer-logo span {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-column h4 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-column a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  margin-bottom: 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* In footer.css */
+@media (max-width: 768px) {
   .footer-links {
-    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-column {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .footer-logo {
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem 0;
   }
-  
-  .footer-links a {
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .footer-links a:hover {
-    color: #8b5cf6;
-  }
-  
-  .footer-links p {
-    border-radius: 40px;
-    padding: 1.5rem 1rem;
-    background-color: #a1a1aa;
-    margin: 0;
-    /* color: #a1a1aa; */
-  }
-  
-  .made-in {
-    margin-top: 2rem;
-    color: #a1a1aa;
-    font-size: 0.9rem;
-  }
+}

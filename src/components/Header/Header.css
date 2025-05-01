@@ -1,18 +1,220 @@
+/* Base Styles */
 .header-container {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #000;
-    margin: auto;
-    padding: 15px;
-}
-
-.hero-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 5%;
+    transition: all 0.3s ease;
+  }
+  
+  .header-container.scrolled {
+    padding: 10px 5%;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.hero-header > button {
-    margin-top: 0;
-}
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .logo-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* Desktop Navigation */
+  .desktop-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .desktop-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  .desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    transition: width 0.3s ease;
+  }
+  
+  .desktop-nav a:hover {
+    color: #a78bfa;
+  }
+  
+  .desktop-nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* CTA Button */
+  .cta-button {
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .mobile-menu-button span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-menu-button span:nth-child(1) {
+    top: 0;
+  }
+  
+  .mobile-menu-button span:nth-child(2),
+  .mobile-menu-button span:nth-child(3) {
+    top: 10px;
+  }
+  
+  .mobile-menu-button span:nth-child(4) {
+    top: 20px;
+  }
+  
+  .mobile-menu-button.open span:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+  
+  .mobile-menu-button.open span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  
+  .mobile-menu-button.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  
+  /* Mobile Navigation */
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  
+  .mobile-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .mobile-nav li {
+    margin: 2rem 0;
+  }
+  
+  .mobile-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-nav a:hover {
+    color: #8b5cf6;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+    
+    .mobile-menu-button {
+      display: block;
+    }
+    
+    .cta-button {
+      display: none;
+    }
+    
+    .logo {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .mobile-nav {
+      display: none;
+    }
+  }

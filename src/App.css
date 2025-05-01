@@ -107,7 +107,7 @@ button {
 .service-card {
   transform: rotateY(15deg);
   opacity: 0.9;
-  /* animation: floatIn 0.6s ease-out forwards; */
+  animation: floatIn 0.6s ease-out forwards;
 }
 
 /* ===== RESULTS ===== */

@@ -4,7 +4,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('../../images/thecamera.jpg');
+    background-image: url('../../../images/thecamera.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0 0 80px 80px;
@@ -25,12 +25,14 @@
   .hero-content h2 {
     font-size: 5rem;
     line-height: 1.1;
+    animation: floatIn 0.6s ease-out forwards;
   }
 
   .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 20px;
     line-height: 1.5;
+    animation: floatIn 1s ease-out forwards;
   }
 
   .hero-btn {
@@ -46,6 +48,7 @@
     cursor: pointer;
     transition: all 0.4s ease;
     z-index: 1;
+    animation: floatIn 1.5s ease-out forwards;
   }
 
   .hero-btn::before {
@@ -141,4 +144,15 @@
   .client-logos img:hover {
     filter: grayscale(0);
     opacity: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero {
+      padding: 20px;
+      min-height: 80vh;
+      background-image: url('../../../images/thecamera.jpg');
+      background-repeat: no-repeat;
+      background-size:auto ;
+      border-radius: 0 0 80px 80px;
+    }    
   }

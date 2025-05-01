@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .card-slider-container {
   position: relative;
   width: 100%;
@@ -5,6 +7,12 @@
   margin: 2rem auto;
   padding: 2rem 0;
   perspective: 1000px;
+}
+
+.card-slider-container > h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .cards-wrapper {
@@ -28,7 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 
 .card.no-transition {
@@ -60,16 +68,20 @@
   margin-bottom: 1rem;
 }
 
-.card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.card p {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  text-align: center;
   color: #fff;
 }
 
-.card p {
-  color: #fff;
-  margin-bottom: 2rem;
-  line-height: 1.5;
+.card h3 {
+  color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: end;
 }
 
 .card-button {
@@ -123,7 +135,7 @@
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 76.8rem) {
   .card {
     width: 250px;
     height: 280px;
@@ -131,11 +143,11 @@
   }
   
   .card.left {
-    transform: translateX(-90%) scale(0.7);
+    /* transform: translateX(-90%) scale(0.7); */
   }
   
   .card.right {
-    transform: translateX(90%) scale(0.7);
+    /* transform: translateX(90%) scale(0.7); */
   }
   
   .slider-arrow {
@@ -144,3 +156,4 @@
     font-size: 1.2rem;
   }
 }
+
