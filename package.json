@@ -1,7 +1,7 @@
 {
   "name": "myledgymedia",
   "version": "0.1.0",
-  "homepage": "https://ledgymedia.com/",
+  "homepage": "https://samusain.github.io/ledgymedia",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
