@@ -4,7 +4,7 @@ import './Process.css';
 
 const Process = () => {
   return (
-    <section className="process">
+    <section className="process" id="process">
       <h2>HOW WE DO IT!</h2>
       <p className="subtitle">Reach your target audience utilizing our 3-step process</p>
       

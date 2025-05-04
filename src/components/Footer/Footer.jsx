@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-          <span>Ledgy Media</span>
+          <span>LEDGY MEDIA</span>
         </div>
         <div className="footer-links">
           <div className="footer-column">

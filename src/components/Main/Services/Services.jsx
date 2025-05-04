@@ -4,7 +4,7 @@ import './Services.css';
 
 const Services = () => {
   return (
-    <section className="services">
+    <section className="services" id="services">
       <h2>OUR SERVICES</h2>
       
       <div className="services-container">
@@ -15,11 +15,7 @@ const Services = () => {
         
         <div className="service-card">
           <h3>Digital Marketing</h3>
-          <ul>
-            <li>Content Creation</li>
-            <li>Influencer Marketing</li>
-            <li>Paid Ads</li>
-          </ul>
+          <p>We deliver measurable results by leveraging various online channels to increase your brand visibilty, engagement and conersions.</p>
         </div>
         
         <div className="paid-ads">

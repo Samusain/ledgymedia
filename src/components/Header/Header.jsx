@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import './Header.css';
 
 const Header = () => {
@@ -26,9 +27,9 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
             <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#process">Process</a></li>
+              <li><Link to="#services">Services</Link></li>
+              <li><Link to="#about">About</Link></li>
+              <li><Link to="#process">Process</Link></li>
             </ul>
           </nav>
         </div>
@@ -50,9 +51,9 @@ const Header = () => {
       {/* Mobile Navigation */}
       <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
         <ul>
-          <li><a href="#services" onClick={toggleMenu}>Services</a></li>
-          <li><a href="#about" onClick={toggleMenu}>About</a></li>
-          <li><a href="#process" onClick={toggleMenu}>Process</a></li>
+          <li><Link to="#services" onClick={toggleMenu}>Services</Link></li>
+          <li><Link to="#about" onClick={toggleMenu}>About</Link></li>
+          <li><Link to="#process" onClick={toggleMenu}>Process</Link></li>
         </ul>
       </nav>
     </div>

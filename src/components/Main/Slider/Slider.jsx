@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './Slider.css';
 
 const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const sliderRef = useRef(null);
   const intervalRef = useRef(null);
+  const sliderRef = useRef(null);
 
   // Duplicate slides for infinite effect
   const cards = [
@@ -52,11 +52,10 @@ const CardSlider = () => {
     return () => clearInterval(intervalRef.current);
   }, [currentIndex]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setIsTransitioning(true);
-    setCurrentIndex(prev => {
+    setCurrentIndex((prev) => {
       if (prev >= cards.length * 2 - 1) {
-        // When reaching the end of duplicated array, reset without animation
         setTimeout(() => {
           setIsTransitioning(false);
           setCurrentIndex(0);
@@ -65,7 +64,15 @@ const CardSlider = () => {
       }
       return prev + 1;
     });
-  };
+  }, [cards.length]);
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      handleNext();
+    }, 8000);
+
+    return () => clearInterval(intervalRef.current);
+  }, [handleNext]);
 
   const handlePrev = () => {
     setIsTransitioning(true);
