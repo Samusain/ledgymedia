@@ -29,6 +29,10 @@
 
 .footer-column {
   flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   min-width: 200px;
   margin-bottom: 1.5rem;
 }
@@ -36,6 +40,20 @@
 .footer-column h4 {
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
+}
+
+.social-container{
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  max-width: 50px;
+}
+
+.social {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  margin-left: 15px;
 }
 
 .footer-column a {

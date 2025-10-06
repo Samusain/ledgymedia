@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import logo from '../../images/logo.png';
 import './Header.css';
 
 const Header = () => {
@@ -22,7 +23,8 @@ const Header = () => {
     <div className={`header-container ${isScrolled ? 'scrolled' : ''}`}>
       <header className="hero-header">
         <div className="logo-nav-container">
-          <h1 className="logo">LEDGY MEDIA</h1>
+          <img src={logo} alt="Logo" className="logo" />
+          <h1 className=""></h1>
           
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
@@ -45,7 +47,7 @@ const Header = () => {
           <span></span>
         </button>
 
-        <button className="cta-button">Let's Talk →</button>
+        <Link to="/contact"><button className="cta-button">Let's Talk →</button></Link>
       </header>
 
       {/* Mobile Navigation */}

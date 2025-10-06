@@ -1,0 +1,26 @@
+.layout {
+    display: grid;
+    min-height: 100vh;
+}
+
+.progress {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.progress p {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 36.8rem){
+    .layout {
+        width: 100vw;
+    }
+
+    .progress {
+        flex-direction: column;
+        justify-content: center;
+    }
+}

@@ -29,12 +29,7 @@
   }
   
   .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #8b5cf6, #6366f1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    width: 200px;
   }
   
   /* Desktop Navigation */
@@ -110,7 +105,7 @@
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #fff;
+    background: #ffffff;
     border-radius: 3px;
     opacity: 1;
     left: 0;

@@ -1,7 +1,8 @@
-// components/Footer.js
-import React from 'react';
-// import { Link } from'react-router-dom';
 import './Footer.css';
+import React from 'react';
+import fblogo from "../../images/fb-logo.png";
+import iglogo from "../../images/logo-ig.webp";
+import whatsapp from "../../images/whatsapp.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -28,9 +29,13 @@ const Footer = () => {
           </div>
           <div className="footer-column">
             <h4>Contact</h4>
-            <img src="../../images/blackheart.jpg" alt="fb-logo" />
+            <div className="social-container">
+              <a href="https://www.facebook.com/share/16yZxWRgs6/"><img src={fblogo} alt="fb-logo" className='social logo'/></a>
+              <a href="/"><img src={whatsapp} alt="wsp-logo" className='social logo'/></a>
+              <a href="https://www.instagram.com/ledgymedia?igsh=MXJzYWhnMWMwdWo5bw=="><img src={iglogo} alt="wsp-logo" className='social logo'/></a>
+            </div>  
             <a href="mailto:info@ledgymedia.com" aria-label="Email us at info@ledgymedia.com">info@ledgymedia.com</a>
-            <a href="tel:+1234567890" aria-label="Call us at +234 (91) 570-351-64">+234 (91) 570-351-64</a>
+            <a href="tel:+2349159298135" aria-label="Call us at +234 (91) 592-981-35">+234 (91) 592-981-35</a>
           </div>
         </div>
       </div>

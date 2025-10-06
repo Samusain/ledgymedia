@@ -14,11 +14,16 @@ const Services = () => {
         </div>
         
         <div className="service-card">
+          <h3>Paid Ads Platforms</h3>
+          <p>We run ads on major platforms such as Google, YouTube, Twitter(X), Instagram and Facebook.</p>
+        </div>
+
+        <div className="service-card">
           <h3>Digital Marketing</h3>
           <p>We deliver measurable results by leveraging various online channels to increase your brand visibilty, engagement and conersions.</p>
         </div>
         
-        <div className="paid-ads">
+        {/* <div className="paid-ads">
           <h4>Paid Ads Platforms</h4>
           <div className="ads-grid">
             <span>Google Ads</span>
@@ -29,7 +34,7 @@ const Services = () => {
             <span>Facebook Ads</span>
             <span>Instagram Ads</span>
           </div>
-        </div>
+        </div> */}
       </div>
       
       <div className="stats-section">

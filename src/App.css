@@ -5,7 +5,6 @@
   font-family: "Big Shoulders", sans-serif;
   color: #fff;
   background-color: #000;
-  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -171,5 +170,11 @@ button {
   .client-logos {
     flex-wrap: wrap;
     gap: 20px;
+  }
+}
+
+@media (max-width: 36.8rem){
+  .app {
+    width: 100vw;
   }
 }
