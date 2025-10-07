@@ -1,193 +1,446 @@
 .services {
-    background-color: #000;
-    color: #fff;
-    padding: 5rem 2rem;
-    text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #000000 50%, #1a1a2e 100%);
+  color: #fff;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.services-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Styles */
+.services-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.services-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+.services-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #06B6D4);
+  border-radius: 2px;
+}
+
+.services-subtitle {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Services Container */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+  perspective: 1000px;
+}
+
+/* Service Card Styles */
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--service-color), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card.hovered::before {
+  transform: scaleX(1);
+}
+
+.service-icon-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.service-icon {
+  font-size: 3rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.service-icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(20px);
+  transition: all 0.3s ease;
+}
+
+.service-card.hovered .service-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.service-card.hovered .service-icon-glow {
+  opacity: 0.3;
+  filter: blur(25px);
+}
+
+.service-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.service-content p {
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.service-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-feature {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-card.hovered .service-feature {
+  background: var(--service-color-light);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.service-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.service-card.hovered .service-glow {
+  opacity: 1;
+}
+
+.service-border-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.service-card.hovered .service-border-glow {
+  opacity: 0.5;
+  animation: borderPulse 2s infinite;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    opacity: 0.3;
   }
-  
-  .services h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    position: relative;
-    display: inline-block;
+  50% {
+    opacity: 0.8;
   }
-  
-  .services h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+/* Paid Ads Section */
+.paid-ads-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4rem;
+  backdrop-filter: blur(20px);
+}
+
+.paid-ads-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ads-icon {
+  font-size: 2.5rem;
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+
+.paid-ads-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.paid-ads-header p {
+  color: #a1a1aa;
+  font-size: 1.1rem;
+}
+
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.ads-platform {
+  background: rgba(99, 102, 241, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.ads-platform:hover {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+/* Stats Section */
+.stats-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.stats-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  text-align: center;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.stat-item h4 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.stat-item p {
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.stat-progress {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  transform-origin: left;
+  animation: progressFill 2s ease-out forwards;
+}
+
+@keyframes progressFill {
+  from {
+    transform: scaleX(0);
   }
-  
-  .services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto 4rem;
-    perspective: 1000px;
+  to {
+    transform: scaleX(1);
   }
-  
-  .service-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .service-card:hover {
-    transform: translateX(-40px);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
-    border-color: rgba(99, 102, 241, 0.5);
-  }
-  
-  .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #8b5cf6;
-  }
-  
-  .service-card h4 {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: #a78bfa;
-  }
-  
-  .service-card ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-  }
-  
-  .service-card li {
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 1.5rem;
-  }
-  
-  .service-card li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #8b5cf6;
-  }
-  
-  .paid-ads {
-    grid-column: span 2;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .ads-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .ads-grid span {
-    background: rgba(99, 102, 241, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-  
-  .ads-grid span:hover {
-    background: rgba(99, 102, 241, 0.3);
-    transform: scale(1.05);
-  }
-  
-  .stats-section {
-    max-width: 800px;
-    margin: 4rem auto 0;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  .stats-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: 400;
-  }
-  
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
-  
-  .stat-item h4 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, #8b5cf6, #6366f1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  
-  .stat-item p {
-    color: #a1a1aa;
-    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 1rem;
   }
 
-  @media (max-width: 36rem){
-    .services {
-      background-color: #000;
-      color: #fff;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    
-    .services h2 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-    }
-    
-    .services-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto 3rem;
-    }
-    
-    .service-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin: 0 0.5rem;
-    }
-    
-    .paid-ads {
-      grid-column: auto;
-      margin: 0 0.5rem;
-    }
-    
-    .ads-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .stats-section {
-      padding: 1.5rem;
-      margin: 2rem 0.5rem 0;
-    }
-    
-    .stats-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+  }
+
+  .paid-ads-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .ads-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-item h4 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-header h2 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .services-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  .ads-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .ads-platform,
+  .stat-item {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .service-card.hovered {
+    transform: none;
+  }
+}

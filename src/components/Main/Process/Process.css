@@ -303,6 +303,10 @@
   font-size: 1.1rem;
 }
 
+.cta-link {
+  text-decoration: none;
+}
+
 .cta-button {
   background: linear-gradient(135deg, #8B5CF6, #F472B6);
   color: white;

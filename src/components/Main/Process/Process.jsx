@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { FiArrowRight, FiCheck, FiUsers, FiTarget, FiCode, FiBarChart } from 'react-icons/fi';
 import './Process.css';
@@ -232,17 +233,19 @@ const Process = () => {
         >
           <h3>Ready to Transform Your Digital Presence?</h3>
           <p>Join brands that have achieved remarkable growth through our proven process</p>
-          <motion.button 
-            className="cta-button"
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 20px 40px rgba(244, 114, 182, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>Start Your Journey</span>
-            <FiArrowRight className="button-icon" />
-          </motion.button>
+          <Link to="/contact" className='cta-link'>
+            <motion.button 
+              className="cta-button"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(244, 114, 182, 0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>Start Your Journey</span>
+              <FiArrowRight className="button-icon" />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -43,7 +43,7 @@ const Contact = () => {
         <div className="back-home-container">
           <Link to="/" className="back-home-btn">
             <FiArrowLeft />
-            Back to Home
+            
           </Link>
         </div>
 
