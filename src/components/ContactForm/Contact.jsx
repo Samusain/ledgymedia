@@ -123,8 +123,8 @@ const Contact = () => {
           {/* Additional Contact Info */}
           <div className="contact-info">
             <div className="contact-method">
-              <h3>Email Us</h3>
-              <p>hello@ledgymedia.com</p>
+              <h3>Email | Contact Us</h3>
+              <p>ledgymedia@gmail.com | +234 (91) 592-981-35</p>
             </div>
             <div className="contact-method">
               <h3>Business Hours</h3>

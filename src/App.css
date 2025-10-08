@@ -159,6 +159,10 @@ button {
 /* ===== MEDIA QUERIES ===== */
 
 @media (max-width: 768px) {
+  .app {
+    width: 100vw;
+  }
+
   .hero-content h2 {
     font-size: 2.5rem;
   }
