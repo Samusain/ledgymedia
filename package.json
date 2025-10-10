@@ -1,7 +1,6 @@
 {
   "name": "myledgymedia",
   "version": "0.1.0",
-  "homepage": "https://samusain.github.io/ledgymedia",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
