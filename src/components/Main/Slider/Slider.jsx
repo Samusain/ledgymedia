@@ -5,7 +5,6 @@ import './Slider.css';
 
 const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef(null);
   const sliderRef = useRef(null);
@@ -49,6 +48,10 @@ const CardSlider = () => {
   ];
 
   // Auto-advance slides
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % cards.length);
+  }, [cards.length]);
+  
   useEffect(() => {
     if (isHovered) return; // Pause on hover
 
@@ -57,20 +60,14 @@ const CardSlider = () => {
     }, 5000);
 
     return () => clearInterval(intervalRef.current);
-  }, [currentIndex, isHovered]);
+  }, [currentIndex, isHovered, handleNext]);
 
-  const handleNext = useCallback(() => {
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev + 1) % cards.length);
-  }, [cards.length]);
 
   const handlePrev = useCallback(() => {
-    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
   }, [cards.length]);
 
   const goToSlide = (index) => {
-    setIsTransitioning(true);
     setCurrentIndex(index);
   };
 

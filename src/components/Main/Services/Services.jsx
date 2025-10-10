@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { FiGlobe, FiTrendingUp, FiBarChart2, FiSearch, FiCode, FiLayout } from 'react-icons/fi';
 import './Services.css';

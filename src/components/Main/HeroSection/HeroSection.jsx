@@ -6,28 +6,10 @@ import './HeroSection.css';
 
 const HeroSection = () => {
   const heroRef = useRef(null);
-  const textRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // const textRef = useRef(null);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
 
   const isInView = useInView(heroRef, { once: false, threshold: 0.3 });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   // Handle window resize
   useEffect(() => {

@@ -71,17 +71,17 @@ const AboutScroll = () => {
     setIsHovered(false);
   }, []);
 
-  const handleDotClick = (index) => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const cardHeight = 320;
-      container.scrollTo({
-        top: index * cardHeight,
-        behavior: 'smooth'
-      });
-      setActiveCard(index);
-    }
-  };
+  // const handleDotClick = (index) => {
+  //   const container = scrollContainerRef.current;
+  //   if (container) {
+  //     const cardHeight = 320;
+  //     container.scrollTo({
+  //       top: index * cardHeight,
+  //       behavior: 'smooth'
+  //     });
+  //     setActiveCard(index);
+  //   }
+  // };
 
   const cardData = [
     {

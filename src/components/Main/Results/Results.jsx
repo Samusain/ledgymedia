@@ -1,10 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-
 import { FiTrendingUp, FiDollarSign, FiUsers, FiTarget } from 'react-icons/fi';
 import './Results.css';
-import Adspent from '../../../images/Ad-spent.gif';
-import RevGen from '../../../images/Revenue-generated.gif';
 
 const Results = () => {
   const sectionRef = useRef(null);

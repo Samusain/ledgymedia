@@ -1,8 +1,5 @@
 import './Footer.css';
 import React from 'react';
-import fblogo from "../../images/fb-logo.png";
-import iglogo from "../../images/logo-ig.webp";
-import whatsapp from "../../images/whatsapp.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
