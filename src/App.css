@@ -177,8 +177,111 @@ button {
   }
 }
 
-@media (max-width: 36.8rem){
+@media (max-width: 480px) {
   .app {
     width: 100vw;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .services {
+    padding: 3rem 1rem;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .results {
+    padding: 3rem 1rem;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .process {
+    padding: 3rem 1rem;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer {
+    padding: 3rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.15rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 2px;
+    bottom: -8px;
+  }
+
+  .card {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .services {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .services-container {
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .results {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .results-grid {
+    gap: 1.25rem;
+  }
+
+  .process {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .steps {
+    gap: 1.25rem;
+  }
+
+  .footer {
+    padding: 2.5rem 0.75rem 0.75rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  h1, h2, h3, h4 {
+    font-weight: 700;
+  }
+
+  p {
+    line-height: 1.5;
   }
 }

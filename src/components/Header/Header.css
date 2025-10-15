@@ -366,7 +366,7 @@
   .header-container {
     padding: 0.8rem 1rem;
   }
-  
+
   .header-container.scrolled {
     padding: 0.6rem 1rem;
   }
@@ -374,23 +374,84 @@
   .logo {
     width: 120px;
   }
-  
+
   .header-container.scrolled .logo {
     width: 100px;
   }
-  
+
   .mobile-nav-link {
     font-size: 1.5rem;
     padding: 0.8rem 1rem;
   }
-  
+
   .mobile-cta-button {
     padding: 1rem 2rem;
     font-size: 1rem;
   }
-  
+
   .mobile-nav-footer {
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-container {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .header-container.scrolled {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .header-container.scrolled .logo {
+    width: 80px;
+  }
+
+  .mobile-menu-button {
+    font-size: 1.5rem;
+    padding: 0.4rem;
+  }
+
+  .mobile-nav {
+    padding: 1.5rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 1.3rem;
+    padding: 0.7rem 0.875rem;
+    border-radius: 10px;
+  }
+
+  .link-number {
+    font-size: 0.8rem;
+    margin-right: 0.75rem;
+  }
+
+  .link-arrow {
+    font-size: 1rem;
+  }
+
+  .mobile-cta-button {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    border-radius: 40px;
+  }
+
+  .mobile-nav-footer {
+    bottom: 1.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .mobile-nav-footer p {
+    font-size: 0.8rem;
+  }
+
+  .contact-email {
+    font-size: 0.9rem;
   }
 }
 

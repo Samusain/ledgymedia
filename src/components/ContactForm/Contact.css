@@ -288,6 +288,7 @@ textarea.blurred-input {
 @media (max-width: 480px) {
   .contact-container {
     padding: 1.5rem 1rem;
+    margin: 0 0.5rem;
   }
 
   .contact-header {
@@ -298,9 +299,117 @@ textarea.blurred-input {
     font-size: 2rem;
   }
 
+  .contact-subtitle {
+    font-size: 0.95rem;
+  }
+
   .back-home-btn {
-    width: 100%;
-    justify-content: center;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .blurred-input {
+    font-size: 0.9rem;
+    padding: 0.8rem 0.8rem 0.8rem 2.3rem;
+  }
+
+  textarea.blurred-input {
+    min-height: 120px;
+    padding-left: 2.3rem;
+  }
+
+  .input-icon {
+    left: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .submit-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-info {
+    padding-top: 1.5rem;
+  }
+
+  .contact-method h3 {
+    font-size: 0.9rem;
+  }
+
+  .contact-method p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-page {
+    padding: 0.5rem 0;
+  }
+
+  .contact-container {
+    padding: 1rem 0.75rem;
+    margin: 0 0.25rem;
+    border-radius: 12px;
+  }
+
+  .contact-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .back-home-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .blurred-input {
+    font-size: 0.85rem;
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    border-radius: 8px;
+  }
+
+  textarea.blurred-input {
+    min-height: 100px;
+    padding-left: 2rem;
+  }
+
+  .input-icon {
+    left: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .contact-form {
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    gap: 0.375rem;
+  }
+
+  .contact-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .contact-info {
+    gap: 1rem;
+  }
+
+  .contact-method h3 {
+    font-size: 0.85rem;
+  }
+
+  .contact-method p {
+    font-size: 0.75rem;
   }
 }
 

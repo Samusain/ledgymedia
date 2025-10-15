@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HashLink as Link } from 'react-router-hash-link';
 import { FiMenu, FiX, FiArrowRight } from 'react-icons/fi';
 import logo from '../../images/logo.png';
 import './Header.css';
